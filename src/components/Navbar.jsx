@@ -9,6 +9,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { useState } from "react";
 import DropDownCategory from "./DropDownCategory";
 import { useSearchContext } from "../context/SearchContext";
+import Breadcrumbs from "./Breadcrumbs";
 
 const Navbar = () => {
   const { setSearchQuery } = useSearchContext();
@@ -32,17 +33,23 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex uppercase gap-12">
+          <Link to="/" className="animated-link">
+            Главная
+          </Link>
+
           <Link
-            to="/"
+            to="/catalog"
             className="animated-link"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}>
             Каталог
           </Link>
-          <Link className="animated-link">Покупателям</Link>
-          <Link className="animated-link">Дизайнерам</Link>
-          <Link className="animated-link">О компании</Link>
-          <Link className="animated-link">Контакты</Link>
+          <Link to="/about" className="animated-link">
+            О компании
+          </Link>
+          <Link to="/contact" className="animated-link">
+            Контакты
+          </Link>
         </div>
         {showModal && (
           <DropDownCategory
@@ -90,6 +97,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
+      <Breadcrumbs />
     </nav>
   );
 };

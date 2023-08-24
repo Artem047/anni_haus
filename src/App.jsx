@@ -4,13 +4,9 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Heart from "./pages/Heart";
 import Basket from "./pages/Basket";
-import Chair from "./pages/CategoryPages/Chair";
-import Armchair from "./pages/CategoryPages/Armchair";
-import Sofa from "./pages/CategoryPages/Sofa";
-import Table from "./pages/CategoryPages/Table";
-import Poufs from "./pages/CategoryPages/Poufs";
-import Wardrobe from "./pages/CategoryPages/Wardrobe";
 import { SearchProvider } from "./context/SearchContext";
+import Catalog from "./pages/Catalog";
+import ProductPage from "./pages/ProductPage";
 
 const App = () => {
   return (
@@ -20,12 +16,12 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/heart" element={<Heart />} />
         <Route path="/basket" element={<Basket />} />
-        <Route path="/chair" element={<Chair />} />
-        <Route path="/armchair" element={<Armchair />} />
-        <Route path="/sofa" element={<Sofa />} />
-        <Route path="/table" element={<Table />} />
-        <Route path="/poufs" element={<Poufs />} />
-        <Route path="/wardrobe" element={<Wardrobe />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog/:categoryPath" element={<Catalog />} />
+        <Route
+          path="/catalog/:categoryPath/:productId"
+          element={<ProductPage />}
+        />
       </Routes>
       <Footer />
     </SearchProvider>

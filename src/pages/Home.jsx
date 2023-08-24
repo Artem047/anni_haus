@@ -1,13 +1,13 @@
 import ImageSlider from "../components/ImageSlider";
-import { CategoryImages, DesignImages, SlidesImages } from "./../data/data";
+import { DesignImages, SlidesImages } from "./../data/data";
 import production from "../images/production.png";
 import TableInterior from "../components/TableInterior";
 import ScrollDesigners from "../components/ScrollDesigners";
 import img from "../images/img.jpg";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BsArrowUpSquareFill } from "react-icons/bs";
+import SelectCatalog from "../components/SelectCatalog";
 
 const Home = () => {
   const [showBtn, setShowBtn] = useState(false);
@@ -32,23 +32,7 @@ const Home = () => {
   return (
     <div className="w-full px-[140px]">
       <ImageSlider slides={SlidesImages} />
-      <div className="flex flex-wrap gap-10 mx-auto justify-center max-w-[1160px] w-full h-[500px]">
-        {CategoryImages.map((category, index) => (
-          <Link
-            to={category.path}
-            key={index}
-            className="w-[360px] h-[180px] bg-[#F1F1F1] relative">
-            <img
-              src={category.categoryImg}
-              alt=""
-              className="w-[200px] absolute top-0 left-0"
-            />
-            <p className="absolute bottom-5 right-10 text-xl">
-              {category.text}
-            </p>
-          </Link>
-        ))}
-      </div>
+      <SelectCatalog />
       <div>
         <h1 className="text-5xl mt-24">Производство</h1>
         <p className="text-[#3B3B3B] opacity-80 mt-10">

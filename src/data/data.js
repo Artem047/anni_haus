@@ -18,6 +18,12 @@ import design5 from "../images/design/design5.png";
 import design6 from "../images/design/design6.png";
 import design7 from "../images/design/design7.png";
 import design8 from "../images/design/design8.png";
+import { dataChairs } from "./utils/dataChairs";
+import { dataArmchairs } from "./utils/dataArmchairs";
+import { dataSofa } from "./utils/dataSofa";
+import { dataTable } from "./utils/dataTable";
+import { dataPouf } from "./utils/dataPouf";
+import { dataWardrobe } from "./utils/dataWardrobe";
 
 export const SlidesImages = [
   {
@@ -37,33 +43,39 @@ export const SlidesImages = [
 export const CategoryImages = [
   {
     categoryImg: chair,
-    text: "Стулья",
+    title: "Стулья",
     path: "/chair",
+    product: dataChairs,
   },
   {
     categoryImg: armchair,
-    text: "Кресла",
+    title: "Кресла",
     path: "/armchair",
+    product: dataArmchairs,
   },
   {
     categoryImg: sofa,
-    text: "Диваны",
+    title: "Диваны",
     path: "/sofa",
+    product: dataSofa,
   },
   {
     categoryImg: table,
-    text: "Столы",
+    title: "Столы",
     path: "/table",
+    product: dataTable,
   },
   {
     categoryImg: poufs,
-    text: "Пуфы",
+    title: "Пуфы",
     path: "/poufs",
+    product: dataPouf,
   },
   {
     categoryImg: wardrobe,
-    text: "Шкафы",
+    title: "Шкафы",
     path: "/wardrobe",
+    product: dataWardrobe,
   },
 ];
 
@@ -99,32 +111,5 @@ export const DesignImages = [
   {
     image: design8,
     text: "Название проекта или интерьера в две строки",
-  },
-];
-
-export const DropDownCat = [
-  {
-    title: "Стулья",
-    path: "/chair",
-  },
-  {
-    title: "Кресла",
-    path: "/armchair",
-  },
-  {
-    title: "Диваны",
-    path: "/sofa",
-  },
-  {
-    title: "Столы",
-    path: "/table",
-  },
-  {
-    title: "Пуфы",
-    path: "/poufs",
-  },
-  {
-    title: "Шкафы",
-    path: "/wardrobe",
   },
 ];

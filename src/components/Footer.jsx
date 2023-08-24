@@ -62,7 +62,9 @@ const Footer = () => {
               <p>
                 Сюда время работы, в которое можно <br /> звонить в магазин
               </p>
-              <a href="mail:info@annihaus.ru">info@annihaus.ru</a>
+              <a href="email:info@annihaus.ru" target="blank">
+                info@annihaus.ru
+              </a>
               <div className="flex gap-3">
                 <Link className="bg-[#AAAAAA] w-6 h-6 flex items-center justify-center rounded">
                   <SlSocialVkontakte size={15} />
