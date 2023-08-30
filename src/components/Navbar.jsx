@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaPinterestP } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
 import { SlSocialVkontakte } from "react-icons/sl";
@@ -12,8 +12,10 @@ import { useSearchContext } from "../context/SearchContext";
 import Breadcrumbs from "./Breadcrumbs";
 
 const Navbar = () => {
-  const { setSearchQuery } = useSearchContext();
+  const { setSearchQuery, selectedProducts, selectedProductsHeart } =
+    useSearchContext();
   const [showModal, setShowModal] = useState(false);
+  const location = useLocation();
 
   const handleMouseEnter = () => {
     setShowModal(true);
@@ -44,11 +46,14 @@ const Navbar = () => {
             onMouseLeave={handleMouseLeave}>
             Каталог
           </Link>
-          <Link to="/about" className="animated-link">
-            О компании
-          </Link>
           <Link to="/contact" className="animated-link">
             Контакты
+          </Link>
+          <Link to="/design" className="animated-link">
+            Дизайнерам
+          </Link>
+          <Link to="/diler" className="animated-link">
+            Дилерам
           </Link>
         </div>
         {showModal && (
@@ -86,18 +91,21 @@ const Navbar = () => {
           <Link to="/heart" className="relative">
             <AiOutlineHeart size={30} />
             <div className="absolute bottom-0 right-0 w-4 h-4 bg-[#000] text-white rounded-[50%] transform translate-x-1/4 translate-y-1/4 flex justify-center items-center text-sm">
-              0
+              {selectedProductsHeart.length}
             </div>
           </Link>
           <Link to="/basket" className="relative">
             <AiOutlineShoppingCart size={30} />
             <div className="absolute bottom-0 right-0 w-4 h-4 bg-[#000] text-white rounded-[50%] transform translate-x-1/4 translate-y-1/4 flex justify-center items-center text-sm">
-              0
+              {selectedProducts.length}
             </div>
           </Link>
         </div>
       </div>
-      <Breadcrumbs />
+      <Breadcrumbs
+        hideOnPaths={["/heart", "/basket"]}
+        currentPath={location.pathname}
+      />
     </nav>
   );
 };

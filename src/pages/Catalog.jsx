@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { CategoryImages } from "../data/data";
-import ProductCard from "../components/ProductCard";
 import SelectCatalog from "../components/SelectCatalog";
+import { useEffect, useState } from "react";
+import { CategoryImages } from "../data/data";
+import ProductPage from "./ProductPage";
+import { dataFurniture } from "../data/utils/dataFurniture";
 
 const Catalog = () => {
   const { categoryPath } = useParams();
@@ -31,7 +32,7 @@ const Catalog = () => {
             <div className="flex justify-center">
               <div className="flex gap-10 my-10 flex-wrap max-w-[1200px]">
                 {currentCategory.product.map((product, index) => (
-                  <ProductCard
+                  <ProductPage
                     key={index}
                     product={{ ...product, categoryPath }}
                   />
@@ -41,7 +42,9 @@ const Catalog = () => {
           )}
         </div>
       ) : (
-        <SelectCatalog />
+        <>
+          <SelectCatalog />
+        </>
       )}
     </div>
   );

@@ -18,12 +18,7 @@ import design5 from "../images/design/design5.png";
 import design6 from "../images/design/design6.png";
 import design7 from "../images/design/design7.png";
 import design8 from "../images/design/design8.png";
-import { dataChairs } from "./utils/dataChairs";
-import { dataArmchairs } from "./utils/dataArmchairs";
-import { dataSofa } from "./utils/dataSofa";
-import { dataTable } from "./utils/dataTable";
-import { dataPouf } from "./utils/dataPouf";
-import { dataWardrobe } from "./utils/dataWardrobe";
+import { dataFurniture } from "./utils/dataFurniture";
 
 export const SlidesImages = [
   {
@@ -45,37 +40,37 @@ export const CategoryImages = [
     categoryImg: chair,
     title: "Стулья",
     path: "/chair",
-    product: dataChairs,
+    product: dataFurniture.filter((item) => item.category === "Стулья"),
   },
   {
     categoryImg: armchair,
     title: "Кресла",
     path: "/armchair",
-    product: dataArmchairs,
+    product: dataFurniture.filter((item) => item.category === "Кресла"),
   },
   {
     categoryImg: sofa,
     title: "Диваны",
     path: "/sofa",
-    product: dataSofa,
+    product: dataFurniture.filter((item) => item.category === "Диваны"),
   },
   {
     categoryImg: table,
     title: "Столы",
     path: "/table",
-    product: dataTable,
+    product: dataFurniture.filter((item) => item.category === "Столы"),
   },
   {
     categoryImg: poufs,
     title: "Пуфы",
     path: "/poufs",
-    product: dataPouf,
+    product: dataFurniture.filter((item) => item.category === "Пуфы"),
   },
   {
     categoryImg: wardrobe,
     title: "Шкафы",
     path: "/wardrobe",
-    product: dataWardrobe,
+    product: dataFurniture.filter((item) => item.category === "Шкафы"),
   },
 ];
 

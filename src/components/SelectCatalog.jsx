@@ -21,7 +21,7 @@ const SelectCatalog = () => {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-10 mx-auto justify-center max-w-[1160px] w-full h-[500px]">
+      <div className="flex flex-wrap gap-10 mx-auto justify-center max-w-[1160px] w-full my-10">
         {filteredCatalog.map((category, index) => (
           <Link
             to={`/catalog${category.path}`}

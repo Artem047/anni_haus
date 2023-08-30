@@ -1,11 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Breadcrumbs = () => {
-  const location = useLocation();
+const Breadcrumbs = ({ hideOnPaths, currentPath }) => {
+  if (hideOnPaths.includes(currentPath)) {
+    return null;
+  }
 
   let currentLink = "";
 
-  const crumbs = location.pathname
+  const crumbs = currentPath
     .split("/")
     .filter((crumb) => crumb !== "")
     .map((crumb, index) => {

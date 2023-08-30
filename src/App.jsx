@@ -6,7 +6,7 @@ import Heart from "./pages/Heart";
 import Basket from "./pages/Basket";
 import { SearchProvider } from "./context/SearchContext";
 import Catalog from "./pages/Catalog";
-import ProductPage from "./pages/ProductPage";
+import ProductCard from "./components/ProductCard";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/catalog/:categoryPath" element={<Catalog />} />
         <Route
           path="/catalog/:categoryPath/:productId"
-          element={<ProductPage />}
+          element={<ProductCard />}
         />
       </Routes>
       <Footer />
